@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.warpper{
+    position: relative;
+    
+}
+.warpper input,label{
+    margin: 5px;
+    padding: 5px;
+}
+.warpper input{
+    width: 350px;
+    height: 50px;
+    padding: 0 15px;
+    outline: none;
+    font-size: 16px;
+    color:grey;
+    border-radius: 10px;
+    border: 2px solid #333;
+    background-color: #2fb7b5;
+
+}
+.warpper label{
+    position: absolute;
+    top: 50%;
+    left:5%;
+    transform: translateY(-50%);
+    color: gray;
+    font-size: 25px;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.warpper input:focus ~ label,
+.warpper input:valid ~ label{
+    top:0;
+    color: #0d0d92;
+    font-size: 25px;    
+}
+.warpper input:focus
+.warpper input:valid{
+    border: 2px solid #0d0d92;
+
+}
+.ripple-btn{
+    position: relative;
+    width: 350px;
+    height: 50px;
+    text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
+    color:grey;
+    font-size: 25px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    background-color: #28dfdf;
+}
