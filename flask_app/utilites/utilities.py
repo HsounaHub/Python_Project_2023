@@ -35,4 +35,4 @@ email_receiver= "entrepriseproject8@gmail.com"
 subject="Test Subject"
 context="this is a test for ahmed"
 email_password = "hustmkrguzpdxptv"
-Utilities.send_mail(email_sender,email_receiver,subject,context,email_password)
+# Utilities.send_mail(email_sender,email_receiver,subject,context,email_password)

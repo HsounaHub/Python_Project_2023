@@ -1,7 +1,8 @@
 from flask_app import app
 from flask import Flask, render_template,session, request, redirect, flash
-from flask_app.models.entreprise import Entreprise
+from flask_app.utilites.utilities import Utilities
 from flask_app.models.employee import Employee
+from flask_app.models.payslip import Payslip
 from flask_app.models.work_time import Work_time
 import string,secrets
 from datetime import datetime,time
@@ -39,6 +40,7 @@ def create_employee():
         # session['entreprise_id'] = entreprise_id
         emp=Employee.add(data)
         Work_time.new({'employee_id':emp})
+        Utilities.send_mail("entrepriseproject8@gmail.com",request.form['email'],"Your New Login informations","Your new account has been created. Here is your Password: "+password,"hustmkrguzpdxptv")
         return redirect('/dashboard')
     return redirect('/')
 
@@ -70,8 +72,9 @@ def dash_employee():
     if not 'employee_id' in session:
         return redirect('/')
     employee = Employee.get_by_id({'id':session['employee_id']})
+    payslips = Payslip.get_by_employee_id({'employee_id':session['employee_id']})
 
-    return render_template('employee_dashboard.html', employee=employee)
+    return render_template('employee_dashboard.html', employee=employee,payslips=payslips)
 
 @app.route('/logout_employee')
 def logout_employee():
