@@ -56,8 +56,8 @@
     <div>
 
         <h1> Holidays balance: {{employee.holidays}} day</h1>
-        <h1 class="my-5">Missed days this Month: {{employee.payslip[0].missed_days}} hour</h1>
-        <h1 class="my-5">Overtime hours this Month: {{employee.payslip[0].overtime}} hour</h1>
+        <h1 class="my-5">Missed days this Month: {{payslips[0].missed_days}} hour</h1>
+        <h1 class="my-5">Overtime hours this Month: {{payslips[0].overtime}} hour</h1>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table  class="my-5 mx-20 text-sm text-left text-gray-500 dark:text-gray-400">
@@ -112,7 +112,7 @@
             </tr>
         </thead>
         <tbody>
-            {%for payslip in employee.payslip%}
+            {%for payslip in payslips%}
             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     {{payslip.date}}

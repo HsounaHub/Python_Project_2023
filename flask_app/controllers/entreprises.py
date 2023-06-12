@@ -3,6 +3,7 @@ from flask import Flask, render_template,session, request, redirect, flash
 from flask_app.models.entreprise import Entreprise
 from flask_app.models.employee import Employee
 from flask_app.models.payslip import Payslip
+from flask_app.models.work_time import Work_time
 from flask_bcrypt import Bcrypt
 import datetime
 from flask_app.utilites.utilities import Utilities
@@ -49,6 +50,18 @@ def login():
             return redirect('/login_entreprise')
         session['entreprise_id'] = entreprise_from_db.id
         return redirect('/dashboard')
+    
+    employee_from_db = Employee.get_by_email({'email':request.form['email']})
+    if(employee_from_db):
+        # if not bcrypt.check_password_hash(employee_from_db.password, request.form['password']):
+        if (employee_from_db.password != request.form['password']):
+            flash("Invalid Password","log")
+            return redirect('/login_employee')
+        session['employee_id'] = employee_from_db.id
+        session['entreprise_id'] = employee_from_db.entreprise_id
+        Work_time.login({'login_time': datetime.datetime.now(),'employee_id':session['employee_id']})
+        return redirect('/dashboard_employee')
+
     flash("Invalid Email","log")
     return redirect('/login_entreprise')
 
