@@ -41,6 +41,15 @@ class Entreprise :
             return cls(result[0])
         return False
     
+    @classmethod
+    def update_password(cls, data):
+        query = """
+        UPDATE entreprises
+        SET password=%(password)s
+        WHERE id = %(id)s;
+        """
+        return connectToMySQL(DATABASE).query_db(query, data)
+
     @staticmethod
     def validate(data):
         is_valid = True

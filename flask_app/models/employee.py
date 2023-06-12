@@ -69,6 +69,15 @@ class Employee :
     #     return connectToMySQL(DATABASE).query_db(query,data)
 
     @classmethod
+    def update_password(cls, data):
+        query = """
+        UPDATE employees
+        SET password=%(password)s
+        WHERE id = %(id)s;
+        """
+        return connectToMySQL(DATABASE).query_db(query, data)
+
+    @classmethod
     def edit(cls, data):
         query = """
         UPDATE employees
