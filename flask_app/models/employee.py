@@ -20,7 +20,7 @@ class Employee :
         self.holidays=data['holidays']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-        self.payslip = payslip.Payslip.get_by_employee_id({'employee_id':self.id})
+        # self.payslip = payslip.Payslip.get_by_employee_id({'employee_id':self.id})
 
     @classmethod
     def get_all(cls,data):
