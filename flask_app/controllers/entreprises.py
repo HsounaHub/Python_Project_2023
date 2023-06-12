@@ -13,8 +13,8 @@ def dashboard():
     if not 'entreprise_id' in session:
         return redirect('/')
     # payslips = Payslip.get_all({'entreprise_id':session['entreprise_id']})
-    employees = Employee.get_all({'entreprise_id':session['entreprise_id']})
-    entreprise = Entreprise.get_by_id({'id':session['entreprise_id']})
+    # employees = Employee.get_all({'entreprise_id':session['entreprise_id']})
+    # entreprise = Entreprise.get_by_id({'id':session['entreprise_id']})
     monthtolist=[]
     if len(monthtolist)<1:
         date = datetime.date.today()
@@ -25,9 +25,8 @@ def dashboard():
             monthtolist=request.form["month"].split("-")
         else:
             monthtolist=["",""]
-    Pmonth=Payslip.get_by_month({'month':monthtolist[1],'year':monthtolist[0]})
-    print(Utilities.get_last_6_months())
-    return render_template("dashboard.html", entreprise = entreprise , employees=employees,pmonth=Pmonth,monthtolist=monthtolist,month_6=Utilities.get_last_6_months())
+    Pmonth=Payslip.get_by_month({'month':monthtolist[1],'year':monthtolist[0],'entreprise_id':session['entreprise_id']})
+    return render_template("dashboard.html",pmonth=Pmonth,monthtolist=monthtolist,month_6=Utilities.get_last_6_months())
 
 @app.route('/add_entreprise')
 def add_entreprise():

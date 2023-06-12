@@ -1,6 +1,7 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app import DATABASE
 from flask import flash
+from flask_app.models import employee
 
 class Payslip :
     def __init__(self,data):
@@ -19,6 +20,7 @@ class Payslip :
         self.retenue = self.retenue_calc()
         self.sociale= self.retenue*0.04
         self.net= self.imposable-self.retenue-self.sociale
+        self.employee=employee.Employee.get_by_id({"id":self.employee_id})
 
     @classmethod
     def get_all(cls,data):
@@ -120,9 +122,10 @@ class Payslip :
     @classmethod
     def get_by_month(cls, data):
         query = """
-        select *from payslips where month(date)=%(month)s and year(date)=%(year)s;
+        select *from payslips where month(date)=%(month)s and year(date)=%(year)s and entreprise_id = %(entreprise_id)s ;
         """
         result = connectToMySQL(DATABASE).query_db(query,data)
+        print(result)
         if result:
             slips = []
             for row in result:
