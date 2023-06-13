@@ -22,14 +22,22 @@ def dashboard():
     if len(monthtolist)<1:
         date = datetime.date.today()
         monthtolist=date.strftime('%Y-%m').split("-")
+        year_month=date.strftime('%Y-%m')
     if request.method == 'POST':
-        print("-"*20+request.form["month"])
         if request.form["month"]!='':
             monthtolist=request.form["month"].split("-")
+            year_month=request.form["month"]
         else:
             monthtolist=["",""]
-    Pmonth=Payslip.get_by_month({'month':monthtolist[1],'year':monthtolist[0],'entreprise_id':session['entreprise_id']})
-    return render_template("dashboard.html",pmonth=Pmonth,monthtolist=monthtolist,month_6=Utilities.get_last_6_months(),ticket=ticket,nbr_ticket=len(ticket))
+
+            year_month=""
+    print(monthtolist)
+    # Pmonth=Payslip.get_by_month({'month':monthtolist[1],'year':monthtolist[0],'entreprise_id':session['entreprise_id']})
+    print(year_month)
+    allempol=Employee.get_all_employees_payslips()
+    print(allempol[0].payslip.date)
+    return render_template("dashboard.html",allempol=allempol,monthtolist=monthtolist,month_6=Utilities.get_last_6_months(),year_month=year_month,name_empol_list=[],ticket=ticket,nbr_ticket=len(ticket))
+
 
 @app.route('/add_entreprise')
 def add_entreprise():
