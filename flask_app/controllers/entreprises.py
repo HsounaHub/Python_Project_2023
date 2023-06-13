@@ -34,9 +34,13 @@ def dashboard():
     print(monthtolist)
     # Pmonth=Payslip.get_by_month({'month':monthtolist[1],'year':monthtolist[0],'entreprise_id':session['entreprise_id']})
     print(year_month)
-    allempol=Employee.get_all_employees_payslips()
-    print(allempol[0].payslip.date)
-    return render_template("dashboard.html",allempol=allempol,monthtolist=monthtolist,month_6=Utilities.get_last_6_months(),year_month=year_month,name_empol_list=[],ticket=ticket,nbr_ticket=len(ticket))
+    allempol=Employee.get_all_employees_payslips({'entreprise_id':session['entreprise_id']})
+
+    nbr_ticket=0
+    for i in ticket:
+        if i.status=='Pending':
+            nbr_ticket=nbr_ticket+1
+    return render_template("dashboard.html",allempol=allempol,monthtolist=monthtolist,month_6=Utilities.get_last_6_months(),year_month=year_month,name_empol_list=[],ticket=ticket,nbr_ticket=nbr_ticket)
 
 
 @app.route('/add_entreprise')
