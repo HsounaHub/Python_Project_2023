@@ -2,6 +2,7 @@ from flask_app import app
 from flask import Flask, render_template,session, request, redirect, flash
 from flask_app.utilites.utilities import Utilities
 from flask_app.models.entreprise import Entreprise
+from flask_app.models.ticket import Tickets
 from flask_app.models.employee import Employee
 from flask_app.models.payslip import Payslip
 from flask_app.models.work_time import Work_time
@@ -103,7 +104,7 @@ def dash_employee():
         return redirect('/')
     employee = Employee.get_by_id({'id':session['employee_id']})
     payslips = Payslip.get_by_employee_id({'employee_id':session['employee_id']})
-
+    
     return render_template('employee_dashboard.html', employee=employee,payslips=payslips)
 
 @app.route('/logout_employee')
