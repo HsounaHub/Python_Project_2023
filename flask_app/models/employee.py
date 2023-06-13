@@ -92,8 +92,6 @@ class Employee :
         SELECT * FROM employees WHERE id = %(id)s;
         """
         result = connectToMySQL(DATABASE).query_db(query,data)
-        print("-"*20)
-        print(result)
         return cls(result[0])
     
 

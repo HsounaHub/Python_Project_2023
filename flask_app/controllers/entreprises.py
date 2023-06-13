@@ -3,6 +3,7 @@ from flask import Flask, render_template,session, request, redirect, flash
 from flask_app.models.entreprise import Entreprise
 from flask_app.models.employee import Employee
 from flask_app.models.payslip import Payslip
+from flask_app.models.ticket import Tickets
 from flask_app.models.work_time import Work_time
 from flask_bcrypt import Bcrypt
 import datetime
@@ -16,6 +17,7 @@ def dashboard():
     # payslips = Payslip.get_all({'entreprise_id':session['entreprise_id']})
     # employees = Employee.get_all({'entreprise_id':session['entreprise_id']})
     # entreprise = Entreprise.get_by_id({'id':session['entreprise_id']})
+    ticket=Tickets.get_by_id_enterprise_id({'entreprise_id':session['entreprise_id']})
     monthtolist=[]
     if len(monthtolist)<1:
         date = datetime.date.today()
@@ -27,13 +29,15 @@ def dashboard():
             year_month=request.form["month"]
         else:
             monthtolist=["",""]
+
             year_month=""
     print(monthtolist)
     # Pmonth=Payslip.get_by_month({'month':monthtolist[1],'year':monthtolist[0],'entreprise_id':session['entreprise_id']})
     print(year_month)
     allempol=Employee.get_all_employees_payslips()
     print(allempol[0].payslip.date)
-    return render_template("dashboard.html",allempol=allempol,monthtolist=monthtolist,month_6=Utilities.get_last_6_months(),year_month=year_month,name_empol_list=[])
+    return render_template("dashboard.html",allempol=allempol,monthtolist=monthtolist,month_6=Utilities.get_last_6_months(),year_month=year_month,name_empol_list=[],ticket=ticket,nbr_ticket=len(ticket))
+
 
 @app.route('/add_entreprise')
 def add_entreprise():

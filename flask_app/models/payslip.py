@@ -14,11 +14,11 @@ class Payslip :
         self.entreprise_id = data['entreprise_id']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-        self.brut = self.brut_calc()
-        self.cnss = self.brut*0.0918
+        self.brut = round(self.brut_calc(), 3)
+        self.cnss = round(self.brut*0.0918, 3)
         self.imposable=self.brut-self.cnss
-        self.retenue = self.retenue_calc()
-        self.sociale= self.retenue*0.04
+        self.retenue = round(self.retenue_calc(), 3)
+        self.sociale= round(self.retenue*0.04, 3)
         self.net= self.imposable-self.retenue-self.sociale
         self.employee=employee.Employee.get_by_id({"id":self.employee_id})
 

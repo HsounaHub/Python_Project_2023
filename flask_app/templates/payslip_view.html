@@ -5,7 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>  
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+
+
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+;
+
+}
+
+
+</style>
     <title>payslip view</title>
 </head>
 <body>
@@ -42,11 +60,22 @@
 
     <!-- ===================================================== -->
 
-<button type="button" style="margin: 50px;" class="focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">payslip</button>
-
-<div style="width: 70%; margin: auto;"  class="relative overflow-x-auto">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+<div style= "margin-bottom: 10%; width: 100%; margin: auto; "  class="relative overflow-x-auto">
+<div style="padding-top: 20px ;padding-bottom: 20px ; margin: auto; width: 650px; display: flex; justify-content: space-between;">
+    <div>
+        <h1>Register : 1111</h1>
+        <h1>Full Name : aziz barrah</h1>
+        <h1>Function : </h1>
+        <h1>Category : </h1>
+        <h1>Echelon : </h1>
+    </div>
+    <div>
+        <h1>N° CNSS : 1111111111</h1>
+        <h1>N° CIN : 11111111</h1>
+    </div>
+</div>
+    <table style="margin: auto; margin-bottom: 10%; width: 10%; height: 700px;" class=" shadow-md w-full text-sm text-left text-gray-500 ">
+        <thead style="border-radius: 0px;" class=" text-xs text-gray-700 uppercase bg-gray-100 ">
             <tr>
                 <th scope="col" class="px-6 py-3 rounded-l-lg">
                     Topics
@@ -66,179 +95,180 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="bg-white dark:bg-gray-800">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr  class="bg-white ">
+                <th style="border-right: none; border-bottom: none; border-top: none; " scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     Base salary
                 </th>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     {{payslip.base_salary}}
                 </td>
-                <td class="px-6 py-4">
+                <td style=" border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
             </tr>
-            <tr class="bg-white dark:bg-gray-800">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr class="bg-white ">
+                <th style="border-right: none; border-bottom: none; border-top: none; "  scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     Attendance days
                 </th>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     {{26-payslip.missed_days}}
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style=" border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
             </tr>
-            <tr class="bg-white dark:bg-gray-800">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr class="bg-white ">
+                <th style="border-right: none; border-bottom: none; border-top: none; " scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     Holidays
                 </th>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     {{payslip.missed_days}}
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style=" border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
             </tr>
-            <tr class="bg-white dark:bg-gray-800">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr class="bg-white ">
+                <th style="border-right: none; border-bottom: none; border-top: none; " scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     Overtime
                 </th>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-top: none; " class="px-6 py-4">
                     {{payslip.overtime}}
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none;  border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none;  border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style="  border-top: none; " class="px-6 py-4">
                     
                 </td>
             </tr>
-            <tr class="bg-white dark:bg-gray-800">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr class="bg-white ">
+                <th style="border-right: none; border-bottom: none; " scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     Gross salary
                 </th>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     {{payslip.brut}}
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
             </tr>
-            <tr class="bg-white dark:bg-gray-800">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr class="bg-white ">
+                <th style="border-right: none; border-bottom: none; border-top: none; " scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     CNSS deduction
                 </th>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     {{payslip.brut}}
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     9.18%
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style=" border-bottom: none; border-top: none; " class="px-6 py-4">
                     {{payslip.cnss}}
                 </td>
             </tr>
-            <tr class="bg-white dark:bg-gray-800">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr class="bg-white ">
+                <th style="border-right: none; border-bottom: none; border-top: none; " scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     Gross taxable salary
                 </th>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     {{payslip.imposable}}
                 </td>
-                <td class="px-6 py-4">
+                <td style=" border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
             </tr>
-            <tr class="bg-white dark:bg-gray-800">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr class="bg-white ">
+                <th style="border-right: none; border-bottom: none; border-top: none; " scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     Withholding tax
                 </th>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     {{payslip.imposable}}
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style=" border-bottom: none; border-top: none; " class="px-6 py-4">
                     {{payslip.retenue}}
                 </td>
             </tr>
-            <tr class="bg-white dark:bg-gray-800">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr class="bg-white ">
+                <th style="border-right: none; border-bottom: none; border-top: none; " scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     Social solidarity contribution
                 </th>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-bottom: none; border-top: none; " class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style=" border-bottom: none; border-top: none; " class="px-6 py-4">
                     {{payslip.sociale}}
                 </td>
             </tr>
-            <tr class="bg-white dark:bg-gray-800">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr class="bg-white ">
+                <th style="border-right: none;   " scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     
                 </th>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-left: none ;  "  class="px-6 py-4">
                     
                 </td>
-                <td class="px-6 py-4">
+                <td style="border-right: none; border-left: none ; " class="px-6 py-4">
                     
                 </td>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     Net Salary
                 </th>
-                <td class="px-6 py-4">
+                <td  class="px-6 py-4">
                     {{payslip.net}}
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
+
 
     
 </body>
