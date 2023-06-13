@@ -107,3 +107,31 @@ class Employee :
             return cls(result[0])
         return False
     
+    @classmethod
+    def get_all_employees_payslips(cls):
+        query = """
+                        SELECT * FROM employees
+                        Left JOIN payslips
+                        ON employees.id = payslips.employee_id ;
+                """
+        results = connectToMySQL(DATABASE).query_db(query)
+
+        all_employees = []
+        for row in results:
+            this_employee= cls(row)
+            # fix up the hero ambiguity for the hero
+            # prepare the data for the contructor
+            if row["payslips.id"]:
+                payslip_data = {
+                    **row,
+                    "id": row["payslips.id"],
+                    "created_at": row["payslips.created_at"],
+                    "updated_at": row["payslips.updated_at"],
+                }
+
+                this_payslip = payslip.Payslip(payslip_data)
+                this_employee.payslip = this_payslip
+            all_employees.append(this_employee)
+
+        return all_employees
+        
