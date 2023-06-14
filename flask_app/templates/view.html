@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script> 
     <title>Document</title>
 </head>
 <body>
-    
-    <h1>Employee {{emp.first_name}} {{emp.last_name}}</h1>
-    <p>Title: {{tick.title}}</p>
-    <p>Object: {{tick.object}}</p>
-    <div>
-        <p>Status: {{tick.status}} </p>
-        
+    <h1 class="text-center text-4xl italic font-semibold tracking-wide  mt-14">Employee {{emp.first_name}} {{emp.last_name}}</h1>
+    <div class="flex flex-col justify-center items-center m-auto mt-14 max-w-sm rounded-lg ">
+    <p class="text-center text-2xl italic">Title: {{tick.title}}</p>
+    <p class="text-center text-2xl italic">Object: {{tick.object}}</p>
+    <div class="flex text-center text-2xl italic">
+        <label for="exampleFormControlSelect1">Status: </label>
+        <p>{{tick.status}}</p>
+    </div>
     </div>
 </body>
-
 </html>

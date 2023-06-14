@@ -10,7 +10,7 @@
 <body>
         <div id="fancyBox" class="flex items-center justify-center">
             <div class="bg-white p-8 rounded-lg"> 
-                <div class="flex justify-center mt-14 dark:text-neutral-200 ">
+                <div class="flex justify-center mt-14 dark:text-neutral-900 ">
                     <div class="flex justify-center max-w-sm rounded-lg bg-white  p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                         <form action="/employee/ticket/update/{{tick.id}}" method="post">
                           <!--Title-->
@@ -29,11 +29,11 @@
                          <!--status-->
                             <select name="status" data-te-select-init  name="status" aria-valuenow="{{tick.status}}">
                             <option value="pending">Pending</option> 
-                            <option value="done">Done</option>
-                            <option value="missed">Missed</option>
+                            <option value="accepted">Accept ticket</option>
+                            <option value="refused">Refuse ticket</option>
                             </select>
                             <div class="mt-4 text-center">
-                            <input type="submit" value="Send Ticket">
+                            <input type="submit" value="Submit" class="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                             </div>
                         </form>
                     </div>
