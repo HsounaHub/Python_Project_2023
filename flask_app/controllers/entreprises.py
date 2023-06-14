@@ -39,7 +39,7 @@ def dashboard():
         sum_brut=0
         for slip in Pmonth:
             if slip!=0:
-                sum_brut+=int(slip.brut)
+                sum_brut+=slip.net
         sum_brut_list.append({'sum_brut':sum_brut,'month':month['month'],'px':int(sum_brut/100)})
     allempol=Employee.get_all_employees_payslips({'entreprise_id':session['entreprise_id']})
     nbr_ticket=0
