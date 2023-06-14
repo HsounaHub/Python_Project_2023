@@ -106,19 +106,19 @@ class Employee :
         return False
     
     @classmethod
-    def get_all_employees_payslips(cls):
+    def get_all_employees_payslips(cls,data):
         query = """
                         SELECT * FROM employees
                         Left JOIN payslips
-                        ON employees.id = payslips.employee_id ;
+                        ON employees.id = payslips.employee_id 
+                        WHERE employees.entreprise_id=%(entreprise_id)s;
                 """
-        results = connectToMySQL(DATABASE).query_db(query)
-
+        results = connectToMySQL(DATABASE).query_db(query,data)
+        if not results:
+            return []
         all_employees = []
         for row in results:
             this_employee= cls(row)
-            # fix up the hero ambiguity for the hero
-            # prepare the data for the contructor
             if row["payslips.id"]:
                 payslip_data = {
                     **row,
