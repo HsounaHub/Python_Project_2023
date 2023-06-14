@@ -48,36 +48,14 @@
                 
                 <span class="text-sm font-semibold text-gray-500 mb-12">2023</span>
                 <div class="flex items-end flex-grow w-full mt-2 space-x-2 sm:space-x-3">
+                    {% for item in sum_brut_list %}
+                        
                     <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                        <span class="absolute top-0  -mt-6 text-xs font-bold group-hover:block">$37,500</span>
-                        <div class="relative flex justify-center w-full h-10 bg-indigo-400"></div>
-                        <span class="absolute bottom-0 text-xs font-bold">{{month_6[0].month}}</span>
+                        <span class="absolute top-0  -mt-6 text-xs font-bold group-hover:block">${{item.sum_brut}}</span>
+                        <div class="relative flex justify-center w-full h-[{{item.px}}px] bg-indigo-400"></div>
+                        <span class="absolute bottom-0 text-xs font-bold">{{item.month}}</span>
                     </div>
-                    <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                        <span class="absolute top-0  -mt-6 text-xs font-bold group-hover:block">$45,000</span>
-                        <div class="relative flex justify-center w-full h-20 bg-indigo-400"></div>
-                        <span class="absolute bottom-0 text-xs font-bold">{{month_6[1].month}}</span>
-                    </div>
-                    <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                        <span class="absolute top-0  -mt-6 text-xs font-bold group-hover:block">$47,500</span>
-                        <div class="relative flex justify-center w-full h-20 bg-indigo-400"></div>
-                        <span class="absolute bottom-0 text-xs font-bold">{{month_6[2].month}}</span>
-                    </div>
-                    <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                        <span class="absolute top-0  -mt-6 text-xs font-bold group-hover:block">$50,000</span>
-                        <div class="relative flex justify-center w-full h-24 bg-indigo-400"></div>
-                        <span class="absolute bottom-0 text-xs font-bold">{{month_6[3].month}}</span>
-                    </div>
-                    <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                        <span class="absolute top-0  -mt-6 text-xs font-bold group-hover:block">$50,000</span>
-                        <div class="relative flex justify-center w-full h-24 bg-indigo-400"></div>
-                        <span class="absolute bottom-0 text-xs font-bold">{{month_6[4].month}}</span>
-                    </div>
-                    <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                        <span class="absolute top-0  -mt-6 text-xs font-bold group-hover:block">$50,000</span>
-                        <div class="relative flex justify-center w-full h-24 bg-indigo-400"></div>
-                        <span class="absolute bottom-0 text-xs font-bold">{{month_6[5].month}}</span>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
