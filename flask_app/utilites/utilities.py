@@ -24,11 +24,10 @@ class Utilities:
     @staticmethod
     def get_last_6_months():
         now = datetime.datetime.now()
-        result = [{'year':now.strftime("%Y%B")[:4],'month':now.strftime("%Y%B")[4:]}]
-        for _ in range(0, 6):
+        result = [{'year':now.strftime("%Y%B")[:4],'month':now.strftime("%Y%B")[4:],'number':now.strftime('%Y-%m')[5:]}]
+        for _ in range(0, 5):
             now = now.replace(day=1) - datetime.timedelta(days=1)
-            result.append({'year':now.strftime("%Y%B")[:4],'month':now.strftime("%Y%B")[4:]})
-            
+            result.append({'year':now.strftime("%Y%B")[:4],'month':now.strftime("%Y%B")[4:],'number':now.strftime('%Y-%m')[5:]})
         return result
 email_sender = "entrepriseproject8@gmail.com"
 email_receiver= "entrepriseproject8@gmail.com"

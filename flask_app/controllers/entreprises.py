@@ -31,12 +31,18 @@ def dashboard():
             monthtolist=["",""]
 
             year_month=""
-    print(monthtolist)
-    # Pmonth=Payslip.get_by_month({'month':monthtolist[1],'year':monthtolist[0],'entreprise_id':session['entreprise_id']})
-    print(year_month)
+    last_6months=Utilities.get_last_6_months()
+    sum_brut_list=[]
+    for month in  last_6months:
+        Pmonth=Payslip.get_by_month({'month':month['number'],'year':month['year'],'entreprise_id':session['entreprise_id']})
+        sum_brut=0
+        for slip in Pmonth:
+            if slip!=0:
+                sum_brut+=int(slip.brut)
+        sum_brut_list.append({'sum_brut':sum_brut,'month':month['month'],'px':int(sum_brut/100)})
     allempol=Employee.get_all_employees_payslips()
-    print(allempol[0].payslip.date)
-    return render_template("dashboard.html",allempol=allempol,monthtolist=monthtolist,month_6=Utilities.get_last_6_months(),year_month=year_month,name_empol_list=[],ticket=ticket,nbr_ticket=len(ticket))
+    
+    return render_template("dashboard.html",allempol=allempol,monthtolist=monthtolist,month_6=last_6months,year_month=year_month,name_empol_list=[],ticket=ticket,nbr_ticket=len(ticket),sum_brut_list=sum_brut_list)
 
 
 @app.route('/add_entreprise')
