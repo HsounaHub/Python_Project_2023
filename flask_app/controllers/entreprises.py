@@ -46,9 +46,7 @@ def dashboard():
     for i in ticket:
         if i.status=='Pending':
             nbr_ticket=nbr_ticket+1
-    return render_template("dashboard.html",allempol=allempol,monthtolist=monthtolist,month_6=last_6months,year_month=year_month,name_empol_list=[],ticket=ticket,nbr_ticket=len(ticket),sum_brut_list=sum_brut_list)
-
-
+    return render_template("dashboard.html",allempol=allempol,monthtolist=monthtolist,month_6=last_6months,year_month=year_month,name_empol_list=[],ticket=ticket,nbr_ticket=nbr_ticket,sum_brut_list=sum_brut_list)
 
 @app.route('/add_entreprise')
 def add_entreprise():

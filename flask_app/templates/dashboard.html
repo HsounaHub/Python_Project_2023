@@ -172,6 +172,7 @@
                     <div class="flex justify-center max-w-sm rounded-lg bg-white  p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                    <table>
                     {%for row in ticket%}
+                    {%if row.status == 'Pending'%}
                     <tr>
                         <td>
                             <a href="/ticket/view/{{row.id}}">{{row.title}}</a>
@@ -180,6 +181,7 @@
                             <a href="/employee/ticket/edit/{{row.id}}"> Edit</a>
                         </td>
                     </tr>
+                    {%endif%}
                     {%endfor%}
 
                    </table>
