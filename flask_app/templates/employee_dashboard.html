@@ -110,24 +110,16 @@
             </tr>
         </thead>
         <tbody>
+            {%for ticket in ti%}
             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    02/2023
+                {{ticket.title}}
                 </th>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">view</a>
+                <td>
+                {{ticket.status}}
                 </td>
-
-            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    03/2023
-                </th>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">view</a>
-                </td>
-
             </tr>
-
+            {%endfor%}
         </tbody>
     </table>
 </div>
@@ -171,7 +163,7 @@
         <div id="fancyBox" class="fixed inset-0 flex items-center justify-center z-50 hidden">
             <div class="bg-white p-8 rounded-lg">
     
-                <div class="flex justify-center mt-14 dark:text-neutral-200 ">
+                <div class="flex justify-center mt-14 dark:text-neutral-900 ">
                     <div class="flex justify-center max-w-sm rounded-lg bg-white  p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                     <form action="/create_ticketsss" method="post">
                     <!--Title-->

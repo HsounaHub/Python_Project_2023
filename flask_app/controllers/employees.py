@@ -104,8 +104,8 @@ def dash_employee():
         return redirect('/')
     employee = Employee.get_by_id({'id':session['employee_id']})
     payslips = Payslip.get_by_employee_id({'employee_id':session['employee_id']})
-    
-    return render_template('employee_dashboard.html', employee=employee,payslips=payslips)
+    ti=Tickets.get_by_id_employee_id({'employee_id':session['employee_id']})
+    return render_template('employee_dashboard.html', employee=employee,payslips=payslips,ti=ti)
 
 @app.route('/logout_employee')
 def logout_employee():

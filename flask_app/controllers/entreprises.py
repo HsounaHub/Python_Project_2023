@@ -31,6 +31,7 @@ def dashboard():
             monthtolist=["",""]
 
             year_month=""
+
     last_6months=Utilities.get_last_6_months()
     sum_brut_list=[]
     for month in  last_6months:
@@ -40,9 +41,13 @@ def dashboard():
             if slip!=0:
                 sum_brut+=int(slip.brut)
         sum_brut_list.append({'sum_brut':sum_brut,'month':month['month'],'px':int(sum_brut/100)})
-    allempol=Employee.get_all_employees_payslips()
-    
+    allempol=Employee.get_all_employees_payslips({'entreprise_id':session['entreprise_id']})
+    nbr_ticket=0
+    for i in ticket:
+        if i.status=='Pending':
+            nbr_ticket=nbr_ticket+1
     return render_template("dashboard.html",allempol=allempol,monthtolist=monthtolist,month_6=last_6months,year_month=year_month,name_empol_list=[],ticket=ticket,nbr_ticket=len(ticket),sum_brut_list=sum_brut_list)
+
 
 
 @app.route('/add_entreprise')

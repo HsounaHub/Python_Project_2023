@@ -49,7 +49,6 @@ class Tickets:
             ent.append(cls(row))
         return ent
 
-
     @classmethod
     def get_by_id_employee_id(cls, data):
         query = """
@@ -60,3 +59,4 @@ class Tickets:
         for row in result:
             emp.append(cls(row))
         return emp
+    
