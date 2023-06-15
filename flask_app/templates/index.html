@@ -11,7 +11,8 @@
 </head>
 <body>
     <!--  -->
-<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="bg-white border-gray-200 dark:bg-gray-900 ">
+<nav class="bg-white border-gray-200 dark:bg-gray-900 w-[1000px] m-auto">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="/" class="flex items-center">
         <img src="{{url_for('static', filename='img/logo.png')}}" class="h-8 mr-3" alt="WorkForcePro logo" />
@@ -27,7 +28,7 @@
             <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
         </li>
         <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onclick="backToBottom()">Contact</a>
         </li>
 
         <li>
@@ -36,9 +37,11 @@
         </ul>
     </div>
     </div>
+  </div>
 </nav>
 <!-- head container -->
-<div class="flex p-20 flex-col-reverse bg-white dark:bg-gray-900 antialiased m-auto sm:flex-row pl-0 sm:pl-32">
+<div class="bg-white dark:bg-gray-900">
+<div class="flex p-20 flex-col-reverse bg-white dark:bg-gray-900 antialiased m-auto sm:flex-row pl-0 sm:pl-32 w-[1200px]">
     <!-- left side -->
     <div class="sm:flex-none sm:w-1/2 w-full mr-20">
         <h1 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white md:w-full">Streamline HR,<br>Less Paperwork,<br>Reward success </h1>
@@ -51,7 +54,8 @@
     <!-- right side -->
     <div class=""><img class="sm:w-full sm:h-auto  rounded-lg" src="{{url_for('static', filename='img/home_img.jpeg')}}" alt="may contain coffe desktop workpaper"></div>  
 </div>
-<div class="container my-24 mx-auto md:px-6">
+</div>
+<div class="container my-24 mx-auto md:px-6 w-[1300px]">
     <!-- Section: Design Block -->
     <section class="mb-32">
         <h2 class="mb-12 pb-4 text-center text-3xl font-bold">
@@ -258,7 +262,7 @@
     <!-- Section: Design Block -->
   </div>
 <!-- Container for demo purpose -->
-<div class="container my-24 mx-auto md:px-6">
+<div class="container my-24 mx-auto md:px-6 w-[1300px]">
     <!-- Section: Design Block -->
     <section class="mb-32 text-center">
       <h2 class="mb-12 pb-4 text-center text-3xl font-bold">
@@ -273,7 +277,7 @@
               <div
                 class="relative mx-4 -mt-4 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
                 data-te-ripple-init data-te-ripple-color="light">
-                <<img src="{{url_for('static', filename='img/desk.png')}}" class="w-full" />
+                <img src="{{url_for('static', filename='img/desk.png')}}" class="w-full" />
                 
                   <div
                     class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]">
@@ -299,7 +303,7 @@
               <div
                 class="relative mx-4 -mt-4 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
                 data-te-ripple-init data-te-ripple-color="light">
-                <<img src="{{url_for('static', filename='img/payslip.png')}}" class="w-full" />
+               <img src="{{url_for('static', filename='img/payslip.png')}}" class="w-full" />
                 
                   <div
                     class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]">
@@ -310,7 +314,7 @@
             <div class="p-6">
               <h5 class="mb-3 text-lg font-bold">Automated HR and Payroll Solution</h5>
              
-              <p class="mb-4 pb-2">
+              <p class="mb-10 pb-2">
                 Streamline HR simplifies HR management through a cloud-based platform, allowing businesses to focus on their core operations.
               </p>
 
@@ -325,7 +329,7 @@
               <div
                 class="relative mx-4 -mt-4 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
                 data-te-ripple-init data-te-ripple-color="light">
-                <<img src="{{url_for('static', filename='img/office.png')}}" class="w-full" />
+                <img src="{{url_for('static', filename='img/office.png')}}" class="w-full" />
                 
                   <div
                     class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]">
@@ -347,18 +351,18 @@
     </section>
     <!-- Section: Design Block -->
   </div>
-  <section class="mb-20 block rounded-lg bg-[hsla(0,0%,100%,0.7)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px]">
+  <section class="mb-20 block w-[1250px] m-auto rounded-lg bg-[hsla(0,0%,100%,0.7)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px]">
 
     
 
     <div class="flex justify-center relative block rounded-lg ">
     
-      <div class="text-center md:max-w-xl lg:max-w-3xl ">
+      <div class="text-center md:max-w-xl lg:max-w-3xl">
         <h2 class=" mt-10 mb-12 px-6 text-3xl font-bold ">About us</h2>
       </div>
     </div>
-    <p class="text-neutral-500 dark:text-neutral-200  flex justify-center">Welcome to our website, where we offer a cutting-edge solution to automate the generation and calculation of payslips for employees.</p>
-    <p class="text-neutral-500 dark:text-neutral-200  flex justify-center"> Our platform combines a powerful HR management system with advanced features, allowing HR professionals to streamline their payroll processes with ease and accuracy.</p>
+    <p class="text-neutral-500 dark:text-neutral-200  flex justify-center w-[800px] m-auto">Welcome to our website, where we offer a cutting-edge solution to automate the generation and calculation of payslips for employees.Our platform combines a powerful HR management system with advanced features, allowing HR professionals to streamline their payroll processes with ease and accuracy.</p>
+    
 
   </section>
 
@@ -377,7 +381,7 @@
 
         <div class="container  mx-auto md:px-6">
           <!-- Section: Design Block -->
-          <section class="mb-32">
+          <section class="mb-32 w-[1350px] m-auto">
             
             <div class="container px-6 md:px-12">
               <div
@@ -421,7 +425,10 @@
 
   </div>
 
-
-
+<script>
+  function backToBottom() {
+    window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });
+}
+</script>
 </body>
 </html>

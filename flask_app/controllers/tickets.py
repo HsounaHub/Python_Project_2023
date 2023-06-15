@@ -44,11 +44,12 @@ def show_edit(id):
 @app.route('/employee/ticket/update/<int:id>',methods=['POST'])
 def update(id):
     if "entreprise_id" in session:
-       data={
+        print(request.form)
+        data={
         **request.form,
         'id':id,
         'closed_date':datetime.now()
         }
-       Tickets.edit_ticket(data)
-       return redirect('/dashboard_employee')
+        Tickets.edit_ticket(data)
+        return redirect('/dashboard_employee')
     return redirect('/')

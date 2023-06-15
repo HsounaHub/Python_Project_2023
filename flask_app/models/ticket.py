@@ -33,7 +33,7 @@ class Tickets:
     @classmethod
     def edit_ticket(cls, data):
         query = """
-        UPDATE tickets SET  title=%(title)s, object=%(object)s,closed_date=%(closed_date)s,status=%(status)s
+        UPDATE tickets SET  status=%(status)s
         WHERE id = %(id)s;
         """
         return connectToMySQL(DATABASE).query_db(query, data)
