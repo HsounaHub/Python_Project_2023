@@ -10,66 +10,76 @@
 <body>
         <!-- ========================navbar============================= -->
     
-<nav  style="margin-bottom: 60px;"  class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="#" class="flex items-center">
-        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">workforcepro</span>
-    </a>
-    <button data-collapse-toggle="navbar-solid-bg" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-solid-bg" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-    </button>
-    <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
-        <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
-        <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</a>
-        </li>
-        <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-        </li>
-
-        <li>
-            <a href="/logout_employee" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Sign out</a>
-        </li>
-        </ul>
-    </div>
-    </div>
-</nav>
-</button>
-<button style="margin-left: 10%; margin-bottom: 30px;" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
-    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-        Employe 1 dashboard
-    </span>
-</button>
-    <!-- ==========================status div=========================== -->
-<div style="display: flex; justify-content: space-around;width: 83%;">
-    <!-- ===============================left div=========================== -->
-    <div>
-        <h1 style="margin-bottom: 20px;"><strong>Last 6 Months:</strong></h1>
-        <div class="w-[400px]">
-            <h1 style="margin-bottom: 20px;"><strong>Last 6 Months:</strong></h1>
-            <div class="mx-auto w-4/5 overflow-hidden">
-                
-            </div>
+        <div class="bg-white border-gray-200 dark:bg-gray-900 m-auto">
+            <nav class="bg-white border-gray-200 dark:bg-gray-900 w-[1000px] m-auto" >
+                <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <a href="/" class="flex items-center">
+                    <img src="{{url_for('static', filename='img/logo.png')}}" class="h-8 mr-3" alt="WorkForcePro logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">WorkForcePro</span>
+                </a>
+                <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                    <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="/dashboard_employee" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
+                    </li>
+                    <li>
+                        <a href="/logout" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Sign out</a>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </nav>
         </div>
 
-    </div>
-        <!-- ===============================right div=========================== -->
-    <div>
 
-        <h1> Holidays balance: {{employee.holidays}} day</h1>
-        <h1 class="my-5">Missed days this Month: {{payslips[0].missed_days}} hour</h1>
-        <h1 class="my-5">Overtime hours this Month: {{payslips[0].overtime}} hour</h1>
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table  class="my-5 mx-20 text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+
+    <h1 class="relative px-10 py-2.5 m-auto mt-10 w-[1000px] mb-5 transition-all ease-in duration-75 rounded-md group-hover:bg-opacity-0 text-3xl font-medium leading-tight text-primary">
+     Welcome {{employee.first_name}} 
+    </h1>
+
+    <!-- ==========================status div=========================== -->
+<div style="  display: flex; justify-content: space-around;width: 1000px;" class="m-auto ">
+    <!-- ===============================left div=========================== -->
+    
+    <div class="w-[500px]">
+        <h1 style="margin-bottom: 50px;margin-left:20px;"><strong>Last 6 Months:</strong></h1>
+        <div class="mx-auto w-4/5 overflow-hidden ">
+            <div class="flex flex-col items-center w-full max-w-screen-md pb-6 bg-white rounded-lg shadow-xl h-[150px]">
+                
+                
+                <div class="flex items-end flex-grow w-full mt-2 space-x-2 sm:space-x-3">
+                    {% for item in sum_brut_list %}
+                        
+                    <div class="relative flex flex-col items-center flex-grow pb-5 group">
+                        <span class="absolute top-0  -mt-6 text-xs font-bold group-hover:block">{{item.sum_brut}}</span>
+                        <div class="relative flex justify-center w-full h-[{{item.px}}px] bg-indigo-400"></div>
+                        <span class="absolute bottom-0 text-xs font-bold">{{item.month}}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- ===============================right div=========================== -->
+    <div class=" w-[500px]">
+
+        <h1 class= " m-auto w-[350px] mb-2"> Holidays balance: {{employee.holidays}} day</h1>
+        <h1 class=" m-auto w-[350px] mb-2">Missed days this Month: {{payslips[0].missed_days}} hour</h1>
+        <h1 class=" m-auto w-[350px] mb-2">Overtime hours this Month: {{payslips[0].overtime}} hour</h1>
+        <div class="relative overflow-x-auto  sm:rounded-lg w-[350px]">
+<div class="relative sm:rounded-lg m-auto ">
+    <table  class="my-5 mx-20 py-0 text-sm text-left text-gray-500 dark:text-gray-400 w-[270px]">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 ">
             <tr>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-6 py-3 w-full">
                     title
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class=" pr-10 w-full m-auto">
                     status
                 </th>
             </tr>
@@ -91,7 +101,7 @@
     </div>
 </div>
 </div>
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-20 w-[1000px] m-auto ">
     <table style="width: 80%;" class="my-5 mx-20 text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -123,7 +133,7 @@
         </tbody>
     </table>
     <div style="display: flex ; margin: auto; justify-content: space-between; width: 90%;" class=" flex space-x-4 space-x-reverse">
-        <button  id="openButton" style="margin-left: 80%;" type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Open tickets</button>
+        <button  id="openButton" style="margin-left: 80%;" type="button" class="focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Open tickets</button>
 
         <div id="fancyBox" class="fixed inset-0 flex items-center justify-center z-50 hidden">
             <div class="bg-white p-8 rounded-lg">
@@ -153,13 +163,13 @@
                      <!--status-->
                         <input type="hidden" name="status" value="Pending" >
     
-                        <div class="mt-4 text-center">
-                        <input type="submit" value="Send Ticket"></div>
+                        <div class="mt-4 text-center  text-2xl  leading-tight text-primarys">
+                        <input type="submit" value="Send Ticket" class="mt-4 focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:green-900"></div>
                         </form>
                     </div>
                  </div>
                  <button id="closeButton"
-                 class="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                 class="mt-4 focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
                  Close
                  </button>
             </div>

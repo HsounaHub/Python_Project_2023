@@ -8,13 +8,39 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="bg-white border-gray-200 dark:bg-gray-900 m-auto">
+        <nav class="bg-white border-gray-200 dark:bg-gray-900 w-[1000px] m-auto" >
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="/" class="flex items-center">
+                <img src="{{url_for('static', filename='img/logo.png')}}" class="h-8 mr-3" alt="WorkForcePro logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">WorkForcePro</span>
+            </a>
+            <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                    <a href="/dashboard" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
+                </li>
+                <li>
+                    <a href="/logout" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Sign out</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </div>
     <h1 class="text-center text-4xl italic font-semibold tracking-wide  mt-14">Employee {{emp.first_name}} {{emp.last_name}}</h1>
     <div class="flex flex-col justify-center items-center m-auto mt-14 max-w-sm rounded-lg ">
-    <p class="text-center text-2xl italic">Title: {{tick.title}}</p>
-    <p class="text-center text-2xl italic">Object: {{tick.object}}</p>
+    <p class="text-center text-2xl italic my-5">Title: {{tick.title}}</p>
+    <p class="text-center text-2xl italic mb-8">Object: {{tick.object}}</p>
     <div class="flex text-center text-2xl italic">
-        <label for="exampleFormControlSelect1">Status: </label>
-        <p>{{tick.status}}</p>
+        <form action="/employee/ticket/update/{{tick.id}}" method="post">
+            <input name="status"  class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" type="submit" value="accepted">
+            <input name="status" class="text-white bg-rd-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" type="submit" value="refused">
+          </form>
     </div>
     </div>
 </body>

@@ -19,7 +19,7 @@ class Payslip :
         self.imposable=self.brut-self.cnss
         self.retenue = round(self.retenue_calc(), 3)
         self.sociale= round(self.retenue*0.04, 3)
-        self.net= self.imposable-self.retenue-self.sociale
+        self.net= round(self.imposable-self.retenue-self.sociale, 3)
         self.employee=employee.Employee.get_by_id({"id":self.employee_id})
 
     @classmethod
@@ -123,6 +123,20 @@ class Payslip :
     def get_by_month(cls, data):
         query = """
         select *from payslips where month(date)=%(month)s and year(date)=%(year)s and entreprise_id = %(entreprise_id)s ;
+        """
+        result = connectToMySQL(DATABASE).query_db(query,data)
+        print(result)
+        if result:
+            slips = []
+            for row in result:
+                slips.append(cls(row))
+            return slips
+        else:
+            return [0]
+    @classmethod
+    def get_by_month_employee_id(cls, data):
+        query = """
+        select *from payslips where month(date)=%(month)s and year(date)=%(year)s and employee_id = %(employee_id)s ;
         """
         result = connectToMySQL(DATABASE).query_db(query,data)
         print(result)

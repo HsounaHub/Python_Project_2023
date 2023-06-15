@@ -13,27 +13,15 @@
                 <div class="flex justify-center mt-14 dark:text-neutral-900 ">
                     <div class="flex justify-center max-w-sm rounded-lg bg-white  p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                         <form action="/employee/ticket/update/{{tick.id}}" method="post">
-                          <!--Title-->
-                            <div class="relative mb-6" data-te-input-wrapper-init>
-                            <input type="text" name="title" value="{{tick.title}}" class="peer block min-h-[auto] w-full rounded border-0 mb-8 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 bg-white">
-                            </div>
-                          <!--object-->
-                            <div class="relative mb-6" data-te-input-wrapper-init>
-                            <textarea
-                            class="peer block min-h-[auto] w-full rounded border-0  px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  bg-white dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                            id="object"
-                            rows="3"
-                            name="object"
-                            placeholder="Object" >{{tick.object}}</textarea>
-                            </div>
-                         <!--status-->
-                            <select name="status" data-te-select-init  name="status" aria-valuenow="{{tick.status}}">
-                            <option value="pending">Pending</option> 
-                            <option value="accepted">Accept ticket</option>
-                            <option value="refused">Refuse ticket</option>
-                            </select>
+                          <!--Title--><div class="relative mb-6 text-2xl font-bold text-gray-900 dark:text-white" data-te-input-wrapper-init>
+                            <p>{{tick.title}}</p>
+                        </div>
+
+                          <div class="relative mb-6 " data-te-input-wrapper-init>
+                            <p>{{tick.object}}</p>
                             <div class="mt-4 text-center">
-                            <input type="submit" value="Submit" class="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            <input name="status"  class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" type="submit" value="accepted">
+                            <input name="status" class="text-white bg-rd-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" type="submit" value="refused">
                             </div>
                         </form>
                     </div>

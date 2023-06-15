@@ -40,13 +40,17 @@ def dashboard():
         for slip in Pmonth:
             if slip!=0:
                 sum_brut+=slip.net
-        sum_brut_list.append({'sum_brut':sum_brut,'month':month['month'],'px':int(sum_brut/100)})
+        sum_brut_list.append({'sum_brut':round(sum_brut, 3),'month':month['month'],'px':int(sum_brut/100)})
+        total=0
+        for i in sum_brut_list:
+            total=total+i['sum_brut']
     allempol=Employee.get_all_employees_payslips({'entreprise_id':session['entreprise_id']})
     nbr_ticket=0
     for i in ticket:
         if i.status=='Pending':
             nbr_ticket=nbr_ticket+1
-    return render_template("dashboard.html",allempol=allempol,monthtolist=monthtolist,month_6=last_6months,year_month=year_month,name_empol_list=[],ticket=ticket,nbr_ticket=nbr_ticket,sum_brut_list=sum_brut_list)
+    nbr_empol=len(Employee.get_all({'entreprise_id':session['entreprise_id']}))
+    return render_template("dashboard.html",allempol=allempol,monthtolist=monthtolist,month_6=last_6months,nbr_empol=nbr_empol,year_month=year_month,name_empol_list=[],ticket=ticket,nbr_ticket=nbr_ticket,sum_brut_list=sum_brut_list,total=total)
 
 @app.route('/add_entreprise')
 def add_entreprise():

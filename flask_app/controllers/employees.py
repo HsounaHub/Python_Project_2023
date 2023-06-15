@@ -7,6 +7,7 @@ from flask_app.models.employee import Employee
 from flask_app.models.payslip import Payslip
 from flask_app.models.work_time import Work_time
 from flask_bcrypt import Bcrypt
+from flask_app.utilites.utilities import Utilities
 
 import string,secrets
 from datetime import datetime,time
@@ -105,7 +106,16 @@ def dash_employee():
     employee = Employee.get_by_id({'id':session['employee_id']})
     payslips = Payslip.get_by_employee_id({'employee_id':session['employee_id']})
     ti=Tickets.get_by_id_employee_id({'employee_id':session['employee_id']})
-    return render_template('employee_dashboard.html', employee=employee,payslips=payslips,ti=ti)
+    last_6months=Utilities.get_last_6_months()
+    net_list=[]
+    for month in  last_6months:
+        Pmonth=Payslip.get_by_month_employee_id({'month':month['number'],'year':month['year'],'employee_id':session['employee_id']})
+        if Pmonth[0]!=0:
+            net_list.append({'sum_brut':Pmonth[0].net,'month':month['month'],'px':int(Pmonth[0].net/30)})
+        if Pmonth[0]==0:
+            net_list.append({'sum_brut':0,'month':month['month'],'px':0})
+    print(net_list)
+    return render_template('employee_dashboard.html', employee=employee,payslips=payslips,ti=ti,sum_brut_list=net_list)
 
 @app.route('/logout_employee')
 def logout_employee():
